@@ -33,7 +33,7 @@ for i = 1:numfich
 end
 
 
-for i = 15
+for i = 1
     load(fullfile(D(i).folder,D(i).name));
 
     initial_peak = trial_table.peak; 
@@ -48,33 +48,26 @@ for i= numfich
 
     Tf= size(trial_table,1);
 
-end
-
-if T0<Tf
-    xlim([0 Tf])
-
-else xlim([0 T0])
-
-end    
+end   
 
 
-subplot(2,2,1), plot(mean_peak,'LineWidth',1.5 )                                                               % name of figure
+subplot(2,3,1), plot(mean_peak,'LineWidth',1.5 )                                                               % name of figure
 xlabel('Number of sessions')                                                % names of axes
 ylabel('Mean peak angle (deg)')
 ylim ([0 80])
-subplot(2,2,2), plot(final_success_rate,'LineWidth',1.5 )
+subplot(2,3,2), plot(final_success_rate,'LineWidth',1.5 )
 xlabel('Number of sessions')
 ylabel('success rate (%)')
 ylim([30 100])
-subplot(2,2,3), plot(initial_peak,'LineWidth',0.5 )
+subplot(2,3,3), plot(initial_peak,'LineWidth',0.5 )
 hold on
 plot(last_peak,'LineWidth',1 )
 xlabel('Number of trials')
 ylabel('peak angle (deg)')
 ylim([0 130])
-legend('session 15','session')
+legend('15',num2str(numfich))
+title(legend,'Session number')
 annotation('textbox', [0.5, 0.9, 0.1, 0.1], 'String', name)
-
 
 if T0<Tf
     xlim([0 Tf])
