@@ -22,7 +22,8 @@ plot (mean_peak,'LineWidth',1.5 )
 title(name)                                                                 % name of figure
 xlabel('Number of sessions')                                                % names of axes
 ylabel('Mean peak angle (deg)')
-ylim ([0 80])
+ylim ([0 120])
+xlim ([0 45])
 
 
 % 
