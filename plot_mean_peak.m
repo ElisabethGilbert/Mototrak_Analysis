@@ -23,7 +23,7 @@ title(name)                                                                 % na
 xlabel('Number of sessions')                                                % names of axes
 ylabel('Mean peak angle (deg)')
 ylim ([0 120])
-xlim ([0 40])
+xlim ([0 45])
 
 
 % 
