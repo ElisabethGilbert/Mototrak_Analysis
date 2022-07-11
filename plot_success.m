@@ -37,4 +37,5 @@ for i = 1:numfich
       xlabel('Number of sessions')
       ylabel('success rate (%)')
       ylim([30 100])
+      xlim([0 45])
 end
