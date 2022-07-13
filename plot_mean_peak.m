@@ -2,7 +2,7 @@ function mean_peak = plot_mean_peak()
 
 % D = dir('C:\Users\ethie\OneDrive\Documents\temp_data\170\');
 
-folder = uigetdir('C:\Users\ethie\OneDrive\Documents\', 'Choose Rat');      % go on the forlder and choose rat
+folder = uigetdir('C:\MotoTrak Files\', 'Choose Rat');      % go on the forlder and choose rat
 [filepath,name,ext] = fileparts(folder);                                    % take the name of the folder which is the name of the rat
 
 D = dir([folder '\*.mat']);                                                 % take only .mat folder for D
