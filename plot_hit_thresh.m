@@ -6,7 +6,7 @@ folder = uigetdir('C:\MotoTrak Files\', 'Choose Rat');      % go on the forlder 
 [filepath,name,ext] = fileparts(folder);                                    % take the name of the folder which is the name of the rat
 
 D = dir([folder '\*.mat']);                                                 % take only .mat folder for D
-D = sort(D.name);
+%D = sort(D.name);
 numfich = size(D,1);                                                        %  
 
 hit_thresh = [];                                                 % 
@@ -21,9 +21,9 @@ for i = 1:numfich
 end
 
 figure                                                                      % new figure
-plot (hit_thresh,'LineWidth',1.5 )
+plot (hit_thresh,'LineWidth',1 )
 title(name)                                                                 % name of figure
 xlabel('Number of trials')                                                % names of axes
 ylabel('Hit thresh (deg)')
 %ylim ([0 120])
-%xlim ([0 45])
+xlim ([0 3500])
