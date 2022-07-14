@@ -25,5 +25,5 @@ plot (hit_thresh,'LineWidth',1 )
 title(name)                                                                 % name of figure
 xlabel('Number of trials')                                                % names of axes
 ylabel('Hit thresh (deg)')
-%ylim ([0 120])
+ylim ([0 80])
 xlim ([0 3500])
