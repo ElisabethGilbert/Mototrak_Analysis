@@ -1,0 +1,27 @@
+MPH = 5;
+MPP = 10;
+MPD = 0.2;
+
+num_trials = trial_table.Properties.CustomProperties.num_trials;
+num_trials = size(trial_table,1);
+
+PKS = cell(num_trials,1);
+LOCS = cell(num_trials,1);
+num_peaks = zeros(num_trials,1);
+trial_table.numpeaks = nan(num_trials,1);
+
+for i = 1:num_trials
+    [PKS{i},LOCS{i}] = findpeaks(trial_table.angle{i,1}(:,2),trial_table.angle{i,1}(:,1),'MinPeakHeight',MPH,'MinPeakProminence',MPP,'MinPeakDistance',MPD);
+    trial_table.numpeaks(i) = size(PKS{i},1);
+    PKS(LOCS{i}>0
+end
+
+
+%% test looking at angle signal
+
+figure;
+for i = 1:num_trials
+    plot(trial_table.angle{i,1}(:,1),trial_table.angle{i,1}(:,2));
+    title(sprintf('essai #%d',i));
+    pause;
+end
