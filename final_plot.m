@@ -67,6 +67,7 @@ ylabel('peak angle (deg)')
 ylim([0 130])
 legend('15',num2str(numfich))
 title(legend,'Session number')
+legend('session 15','last session')
 annotation('textbox', [0.5, 0.9, 0.1, 0.1], 'String', name)
 
 if T0<Tf
