@@ -16,6 +16,8 @@ for i = 1:numfich
     hit_thresh = [hit_thresh;trial_table.hit_thresh];
     
     session_trials(i,:) = [i trial_table.Properties.CustomProperties.num_trials];
+    
+    mean_hit_thresh_session(i) = (mean(hit_thresh))
 end
 
 % figure                                                                      % new figure
