@@ -9,13 +9,13 @@ D = dir([folder '\*.mat']);                                                 % ta
 %D = sort(D.name);
 numfich = size(D,1);                                                        %  
 
-hit_thresh = [];                                                 % 
+hit_thresh = [];
 session_trials = nan(numfich,2);
 
 for i = 1:numfich
     load(fullfile(D(i).folder,D(i).name));
     
-    hit_thresh = [hit_thresh;trial_table.hit_thresh];       % permet de recuperer le mean peak dans les custom properties
+    hit_thresh = [hit_thresh;trial_table.hit_thresh];
     
     session_trials(i,:) = [i trial_table.Properties.CustomProperties.num_trials];
 end
