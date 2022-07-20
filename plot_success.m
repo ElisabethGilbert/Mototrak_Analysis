@@ -1,7 +1,7 @@
 function success = plot_success()
 
 
-folder = uigetdir('C:\Users\ethie\OneDrive\Documents\temp_data\', 'Choose Rat');
+folder = uigetdir('C:\MotoTrak Files\', 'Choose Rat');
 [filepath,name] = fileparts(folder);
 
 
@@ -37,4 +37,5 @@ for i = 1:numfich
       xlabel('Number of sessions')
       ylabel('success rate (%)')
       ylim([30 100])
+      xlim([0 45])
 end

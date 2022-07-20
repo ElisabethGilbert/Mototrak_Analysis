@@ -1,7 +1,7 @@
 function peak = plot_peak()
 
 
-folder = uigetdir('C:\Users\ethie\OneDrive\Documents\temp_data\', 'Choose Rat');
+folder = uigetdir('C:\MotoTrak Files\', 'Choose Rat');
 [filepath,name] = fileparts(folder);
 
 
