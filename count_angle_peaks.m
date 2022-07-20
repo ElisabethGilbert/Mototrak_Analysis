@@ -19,7 +19,7 @@ for i = 1:num_trials
     [PKS{i},LOCS{i}] = findpeaks(trial_table.angle{i,1}(:,2),trial_table.angle{i,1}(:,1),'MinPeakHeight',MPH,'MinPeakProminence',MPP,'MinPeakDistance',MPD);
     trial_table.numpeaks(i) = size(PKS(LOCS{i}>0),1); % count number of peaks after trial onset
     
-    % if two consecutive peaks have the same value, they may be teh same
+    % if two consecutive peaks have the same value, they may be the same
     % peak as MPP does not merge them
 %     if any(~diff(PKS{i}))
 %        for j=find(diff(PKS{i}))
