@@ -11,7 +11,7 @@ title_val = (answer{2});
 
 for j =1:user_val
 
-folder = uigetdir('C:\MotoTrak Files\', 'Choose Rat');      % go on the forlder and choose rat
+folder = uigetdir('C:\MotoTrak Files\', 'Choose Rat');      % go on the folder and choose rat
 [filepath,name,ext] = fileparts(folder);                                    % take the name of the folder which is the name of the rat
 
 D = dir([folder '\*.mat']);
@@ -35,6 +35,7 @@ hit_thresh = [];
 
          mean_hit_thresh_session(i) = mean(hit_thresh,'omitnan');
          mean_hit_thresh_rat(i,j) = (mean(mean_hit_thresh_session(i)));
+
 
      end
      final_mean = mean(mean_hit_thresh_rat,2);
