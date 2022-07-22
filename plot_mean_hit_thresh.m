@@ -45,6 +45,6 @@ end
  title(title_val)                                                                 % name of figure
  xlabel('Number of sessions')                                                % names of axes
  ylabel('Mean hit thresh (deg)')
- %ylim ([0 50])
- %xlim ([0 4])
+ ylim ([0 60])
+ xlim ([0 45])
 end
