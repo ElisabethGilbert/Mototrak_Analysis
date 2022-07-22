@@ -26,23 +26,24 @@ hit_thresh = [];
      if exist(filename)
          numfich = numfich-1    
      end
+    
+     for i = 1:numfich
+         load(fullfile(D(i).folder,D(i).name));
+         hit_thresh = [hit_thresh;trial_table.hit_thresh];
 
-for i = 1:numfich
-    load(fullfile(D(i).folder,D(i).name));
-    
-    hit_thresh = [hit_thresh;trial_table.hit_thresh];
-    
-    session_trials(i,:) = [i trial_table.Properties.CustomProperties.num_trials];
-    
-    mean_hit_thresh_session(i) = (mean(hit_thresh));
+         session_trials(i,:) = [i trial_table.Properties.CustomProperties.num_trials];
 
-end
-    mean_hit_thresh_rat(i) =(mean(mean_hit_thresh_session(j)));
+         mean_hit_thresh_session(i) = mean(hit_thresh,'omitnan');
+         mean_hit_thresh_rat(i,j) = (mean(mean_hit_thresh_session(i)));
+
+     end
+     final_mean = mean(mean_hit_thresh_rat,2);
 end
  figure                                                                      % new figure
- plot (mean_hit_thresh_rat,'LineWidth',1 )
+ plot (final_mean,'LineWidth',1 )
  title(title_val)                                                                 % name of figure
  xlabel('Number of sessions')                                                % names of axes
- ylabel('Hit thresh (deg)')
+ ylabel('Mean hit thresh (deg)')
  %ylim ([0 50])
  %xlim ([0 4])
+end
